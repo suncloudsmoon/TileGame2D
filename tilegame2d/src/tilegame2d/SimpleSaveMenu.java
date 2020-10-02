@@ -28,12 +28,16 @@ import javax.swing.JLabel;
  * Recommended methods to implement for a simple save menu.
  * 
  * @author Ganesha Ajjampura
- *
+ * @version 0.5.0
  */
 public interface SimpleSaveMenu {
+
+	// A button that points to the settings page.
 	public JLabel settingsButton();
 
+	// Saves the game state to a file.
 	public JLabel saveButton();
 
+	// Combines the background and buttons into the JFrame.
 	public void display();
 }

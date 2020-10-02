@@ -29,16 +29,17 @@ import java.awt.image.BufferedImage;
  * simple game.
  * 
  * @author Ganesha Ajjampura
- *
+ * @version 0.5.0
  */
 public interface SimpleMainCharacter {
-	// In the bufferedImage method, use BufferedImage Array to sort animation!
-	/**
+
+	/*
 	 * Loads and Returns the main character's image. Note: you can use the
-	 * BufferedImage Array to sort animation too!
-	 * 
-	 * @return A BufferedImage that contains the image of the main character.
+	 * BufferedImage Array to sort animation too.
 	 */
 	public BufferedImage getMainCharacterImg();
+	
+	// Sets the random position generator (like the Random class) to a minimum & maximum
+	public void setRandPos(int min, int max);
 
 }

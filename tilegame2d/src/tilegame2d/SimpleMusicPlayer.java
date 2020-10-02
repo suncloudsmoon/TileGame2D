@@ -31,9 +31,10 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
- * Contains a method that simplifies the process of playing music files.
+ * Simplifies the process of playing music files.
  * 
  * @author Ganesha Ajjampura
+ * @version 0.5.0
  *
  */
 public class SimpleMusicPlayer {
@@ -42,8 +43,8 @@ public class SimpleMusicPlayer {
 	private Clip clip;
 
 	/**
-	 * Opens and plays supported music file types. Note: the music file must be
-	 * located in a source folder.
+	 * Opens and plays supported music file types. <b> Note: the music file must be
+	 * located in a source folder. </b>
 	 * 
 	 * @param fileName A String value that specifies the directory path of the music
 	 *                 file.
@@ -60,5 +61,14 @@ public class SimpleMusicPlayer {
 
 		clip.open(rawAudio);
 		clip.start();
+	}
+
+	public boolean stopMusic() throws IOException {
+		if (clip != null && clip.isOpen()) {
+			rawAudio.close();
+			clip.close();
+			return true;
+		}
+		return false;
 	}
 }

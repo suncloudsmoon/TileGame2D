@@ -24,30 +24,62 @@ package tilegame2d;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.LookAndFeel;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  * Contains methods that automatically creates and sets values for JFrame.
  * 
  * @author Ganesha Ajjampura
- *
+ * @version 0.6.3
  */
 public class SimpleFrame {
 
-	public JFrame frame;
+	public JFrame frame; // the user should be able to create multiple instances of this
+
+	SimpleFrame(String title, ImageIcon icon, int w, int h, SimpleGraphics sg) {
+		setFrameValuesForAnimation(title, icon, w, h, sg);
+	}
+	
+	public SimpleFrame(String title, int w, int h) {
+		setFrameValues(title, null, w, h);
+	}
+
+	public SimpleFrame(String title, ImageIcon icon, int w, int h) {
+		setFrameValues(title, icon, w, h);
+	}
+	
+	public SimpleFrame(String title, ImageIcon icon, int w, int h, LookAndFeel ui) throws UnsupportedLookAndFeelException {
+		setFrameValues(title, icon, w, h, ui);
+	}
 
 	/**
 	 * Initializes the frame with default values.
 	 * 
-	 * @param title  A String value specifying the title of the JFrame object.
-	 * @param icon   A ImageIcon object containing the image for the JFrame icon.
-	 * @param width  An integer value specifying the width of the JFrame object.
-	 * @param height An integer value specifying the height of the JFrame object.
+	 * @param title A String value specifying the title of the JFrame object.
+	 * @param icon  A ImageIcon object containing the image for the JFrame icon.
+	 * @param w     An integer value specifying the width of the JFrame object.
+	 * @param h     An integer value specifying the height of the JFrame object.
 	 */
-	public void initializeFrame(String title, ImageIcon icon, int width, int height) {
+	private void setFrameValues(String title, ImageIcon icon, int w, int h) {
 		frame = new JFrame();
 		frame.setTitle(title);
-		frame.setSize(width, height);
-		frame.setIconImage(icon.getImage());
+		frame.setSize(w, h);
+		if (icon != null)
+			frame.setIconImage(icon.getImage());
+		frame.setResizable(false);
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	private void setFrameValues(String title, ImageIcon icon, int w, int h, LookAndFeel ui) throws UnsupportedLookAndFeelException {
+		UIManager.setLookAndFeel(ui);
+		frame = new JFrame();
+		frame.setTitle(title);
+		frame.setSize(w, h);
+		if (icon != null)
+			frame.setIconImage(icon.getImage());
 		frame.setResizable(false);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -62,16 +94,18 @@ public class SimpleFrame {
 	 * @param width  An integer value specifying the width of the JFrame object.
 	 * @param height An integer value specifying the height of the JFrame object.
 	 */
-	public void initializeFrameForAnimation(SimpleGraphics sg, String title, ImageIcon icon, int width, int height) {
+	private void setFrameValuesForAnimation(String title, ImageIcon icon, int width, int height, SimpleGraphics sg) {
 		frame = new JFrame();
-		sg.screen();
+		sg.run();
 		frame.add(sg);
 		frame.setTitle(title);
 		frame.setSize(width, height);
 		frame.setLocationRelativeTo(null);
-		frame.setIconImage(icon.getImage());
+		if (icon != null)
+			frame.setIconImage(icon.getImage());
 		frame.setResizable(false);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+
 }

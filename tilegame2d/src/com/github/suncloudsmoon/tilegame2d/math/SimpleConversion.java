@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-package tilegame2d;
+package com.github.suncloudsmoon.tilegame2d.math;
 
 import java.util.List;
 
@@ -35,7 +35,7 @@ public class Move {
 		for (int i = 0; i < 5; i++) {
 			x.add(i);
 		}
-		// convert the Integer arraylist into int array
+		// Convert the Integer arraylist into int array
 		int[] xCoordinates = convertIntegerList(x);
 	}
 }
@@ -57,6 +57,7 @@ public class SimpleConversion {
 	 * 
 	 * @param at List of boolean values
 	 * @return boolean array with all the values in {@code List<Boolean> at}
+	 * @deprecated use the steam() class to convert array into List
 	 */
 	public static boolean[] convertBooleanList(List<Boolean> at) {
 		boolean[] booleanList = new boolean[at.size()];
@@ -71,6 +72,7 @@ public class SimpleConversion {
 	 * 
 	 * @param at List of byte values
 	 * @return byte array with the values of {@code List<Byte> at}
+	 * @deprecated use the steam() class to convert array into List
 	 */
 	public static byte[] convertByteList(List<Byte> at) {
 		byte[] byteList = new byte[at.size()];
@@ -86,6 +88,7 @@ public class SimpleConversion {
 	 * 
 	 * @param at list type containing characters in arrays
 	 * @return char array with the values in {@code List<Character> at}
+	 * @deprecated use the steam() class to convert array into List
 	 */
 	public static char[] convertCharList(List<Character> at) {
 		char[] charList = new char[at.size()];
@@ -100,6 +103,7 @@ public class SimpleConversion {
 	 * 
 	 * @param at List type with short type values
 	 * @return short[] with all the values in {@code List<Short> at}
+	 * @deprecated use the steam() class to convert array into List
 	 */
 	public static short[] convertShortTypeList(List<Short> at) {
 		short[] shortList = new short[at.size()];
@@ -114,6 +118,7 @@ public class SimpleConversion {
 	 * 
 	 * @param at List type of integers
 	 * @return int[] with all the values of {@code List<Integer> at}
+	 * @deprecated use the steam() class to convert array into List
 	 */
 	public static int[] convertIntegerList(List<Integer> at) {
 		int[] integerList = new int[at.size()];
@@ -128,6 +133,7 @@ public class SimpleConversion {
 	 * 
 	 * @param at List type of floats
 	 * @return float[] with values in {@code List<Float> at}
+	 * @deprecated use the steam() class to convert array into List
 	 */
 	public static float[] convertFloatList(List<Float> at) {
 		float[] floatList = new float[at.size()];
@@ -142,6 +148,7 @@ public class SimpleConversion {
 	 * 
 	 * @param at An List that needs to be converted into an double array.
 	 * @return double[] with values in {@code List<Double> at}
+	 * @deprecated use the steam() class to convert array into List
 	 */
 	public static double[] convertDoubleList(List<Double> at) {
 		double[] doubleList = new double[at.size()];
@@ -156,6 +163,7 @@ public class SimpleConversion {
 	 * 
 	 * @param at List type of long
 	 * @return long[] with the values in {@code List<Long> at}
+	 * @deprecated use the steam() class to convert array into List
 	 */
 	public static long[] convertLongList(List<Long> at) {
 		long[] longList = new long[at.size()];
@@ -170,6 +178,7 @@ public class SimpleConversion {
 	 * 
 	 * @param at List type of String
 	 * @return String[] with values in {@code List<String> at}
+	 * @deprecated use the steam() class to convert array into List
 	 */
 	public static String[] convertStringList(List<String> at) {
 		String[] stringList = new String[at.size()];

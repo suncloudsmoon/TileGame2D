@@ -20,8 +20,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-package tilegame2d;
+package com.github.suncloudsmoon.tilegame2d.storage;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.sound.sampled.AudioInputStream;
@@ -39,33 +40,64 @@ import javax.sound.sampled.UnsupportedAudioFileException;
  */
 public class SimpleMusicPlayer {
 
-	private AudioInputStream rawAudio;
 	private Clip clip;
 
 	/**
 	 * Opens and plays supported music file types. <b> Note: the music file must be
 	 * located in a source folder. </b>
 	 * 
-	 * @param fileName A String value that specifies the directory path of the music
-	 *                 file.
+	 * @param dir the name of the music file in the classpath directory.
 	 * @throws UnsupportedAudioFileException
 	 * @throws LineUnavailableException
 	 * @throws IOException
 	 */
-	public void playMusic(String fileName) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
-		if (clip != null && clip.isOpen()) {
-			clip.close();
-		}
-		rawAudio = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResource(fileName));
-		clip = AudioSystem.getClip();
+	public boolean playInternalMusic(String dir)
+			throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+		if (new File(dir).exists()) {
+			if (clip != null && clip.isOpen()) {
+				clip.close();
+			}
 
-		clip.open(rawAudio);
-		clip.start();
+			AudioInputStream rawAudio = AudioSystem.getAudioInputStream(getClass().getClassLoader().getResource(dir));
+			clip = AudioSystem.getClip();
+			clip.open(rawAudio);
+			clip.start();
+			return true;
+		}
+		return false;
 	}
 
-	public boolean stopMusic() throws IOException {
-		if (clip != null && clip.isOpen()) {
-			rawAudio.close();
+	/**
+	 * Opens and plays supported music file types according to AudioInputStream.
+	 * 
+	 * @param dir where the music file is located.
+	 * @throws UnsupportedAudioFileException
+	 * @throws LineUnavailableException
+	 * @throws IOException
+	 */
+	public boolean playMusic(String dir) throws UnsupportedAudioFileException, LineUnavailableException, IOException {
+		File f = new File(dir);
+		if (f.exists()) {
+			if (clip != null && clip.isOpen()) {
+				clip.close();
+			}
+
+			AudioInputStream rawAudio = AudioSystem.getAudioInputStream(f);
+			clip = AudioSystem.getClip();
+			clip.open(rawAudio);
+			clip.start();
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Stops the current music playing.
+	 * 
+	 * @return a boolean value indicating whether the operation was successful.
+	 */
+	public boolean stopMusic() {
+		if (clip.isRunning()) {
 			clip.close();
 			return true;
 		}

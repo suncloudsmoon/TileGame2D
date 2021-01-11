@@ -20,7 +20,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-package tilegame2d;
+package com.github.suncloudsmoon.tilegame2d.pages;
 
 import javax.swing.JLabel;
 

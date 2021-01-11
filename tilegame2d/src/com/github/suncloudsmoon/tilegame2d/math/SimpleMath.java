@@ -20,18 +20,26 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-package tilegame2d;
+package com.github.suncloudsmoon.tilegame2d.math;
+
+import java.util.Random;
 
 /**
  * Simplifies the process of finding specfic data from a dataset.
  * 
  * @author Ganesha Ajjampura
- * @version 0.6.5
+ * @version 0.0.1
  */
 public class SimpleMath {
 
 	private SimpleMath() {
 
+	}
+
+	// All numbers should be positive in order for this to work
+	// Inclusive to exclusive
+	public static int getRandValue(int b, int e, Random rand) {
+		return rand.nextInt(e - b) + b;
 	}
 
 	/**
@@ -47,22 +55,6 @@ public class SimpleMath {
 			addedNum += value;
 		}
 		return addedNum / 2;
-	}
-
-	public static int findMean(int[] meanValues) {
-		int addedNum = 0;
-		for (int value : meanValues) {
-			addedNum += value;
-		}
-		return (int) Math.round(addedNum / 2d);
-	}
-
-	public static long findMean(long[] meanValues) {
-		long addedNum = 0;
-		for (long value : meanValues) {
-			addedNum += value;
-		}
-		return Math.round(addedNum / 2);
 	}
 
 	/**

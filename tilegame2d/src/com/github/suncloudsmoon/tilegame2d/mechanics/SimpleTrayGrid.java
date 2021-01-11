@@ -1,16 +1,13 @@
 /*
-Copyright (c) 2020 Ganesha Ajjampura
-
+Copyright (c) 2021 Ganesha Ajjampura
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,26 +17,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-package tilegame2d;
+package com.github.suncloudsmoon.tilegame2d.mechanics;
 
-import java.awt.image.BufferedImage;
+import java.awt.event.ActionEvent;
 
-/**
- * Specifies the recommended methods to be inherited for a main character in a
- * simple game.
- * 
- * @author Ganesha Ajjampura
- * @version 0.5.0
- */
-public interface SimpleMainCharacter {
+public interface SimpleTrayGrid {
 
-	/*
-	 * Loads and Returns the main character's image. Note: you can use the
-	 * BufferedImage Array to sort animation too.
-	 */
-	public BufferedImage getMainCharacterImg();
-	
-	// Sets the random position generator (like the Random class) to a minimum & maximum
-	public void setRandPos(int min, int max);
-
+	public void userClicked(ActionEvent e);
 }

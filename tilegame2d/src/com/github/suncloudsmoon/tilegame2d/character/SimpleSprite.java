@@ -20,24 +20,38 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
  */
 
-package tilegame2d;
+package com.github.suncloudsmoon.tilegame2d.character;
 
-import javax.swing.JLabel;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 /**
- * Recommended methods to implement for a simple save menu.
+ * Reads and stores sprite images all in one class.
  * 
  * @author Ganesha Ajjampura
- * @version 0.5.0
+ * @version 0.0.1
  */
-public interface SimpleSaveMenu {
+public class SimpleSprite {
 
-	// A button that points to the settings page.
-	public JLabel settingsButton();
+	public final BufferedImage IMAGE;
 
-	// Saves the game state to a file.
-	public JLabel saveButton();
+	/**
+	 * A path to either a physical location 
+	 * @param path
+	 * @throws IOException 
+	 */
+	public SimpleSprite(String path, boolean internal) throws IOException {
+		IMAGE = read(path, internal);
+	}
 
-	// Combines the background and buttons into the JFrame.
-	public void display();
+	public BufferedImage read(String url, boolean internal) throws IOException {
+		if (internal) {
+			return ImageIO.read(getClass().getClassLoader().getResource(url));
+		} else {
+			return ImageIO.read(new File(url));
+		}
+	}
 }

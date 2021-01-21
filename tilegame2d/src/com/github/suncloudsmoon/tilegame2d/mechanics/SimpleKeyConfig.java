@@ -1,21 +1,24 @@
 /*
-Copyright (c) 2020, 2021, Ganesha Ajjampura
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
- */
+* Copyright (c) 2020-2021 Ganesha Ajjampura
+* 
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+* 
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+* 
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*/
 
 package com.github.suncloudsmoon.tilegame2d.mechanics;
 
@@ -30,14 +33,14 @@ import javax.swing.KeyStroke;
 /**
  * Contains methods that simply the process of key bindings.
  * 
- * @version 0.5.8
+ * @version 0.0.1
  * @author Ganesha Ajjampura
  *
  */
-public class SimpleGameKeys {
+public class SimpleKeyConfig {
 
-	private SimpleFrame sf;
-	private SimpleGaming sg;
+	private SimpleKeySync sk;
+	private SimpleGame sg;
 
 	private Action goUp;
 	private Action goDown;
@@ -46,8 +49,8 @@ public class SimpleGameKeys {
 	private Action spaceBar;
 	private Action saveMenu;
 
-	public SimpleGameKeys(SimpleGaming sg, SimpleFrame sf) {
-		this.sf = sf;
+	public SimpleKeyConfig(SimpleKeySync sk, SimpleGame sg) {
+		this.sk = sk;
 		this.sg = sg;
 	}
 
@@ -66,7 +69,7 @@ public class SimpleGameKeys {
 		spaceBar = new SpaceBar();
 		saveMenu = new SaveMenu();
 
-		JRootPane rootOfAll = sf.getRootPane();
+		JRootPane rootOfAll = sg.frame.getRootPane();
 
 		// Move Up
 		rootOfAll.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke("W"), "goUp");
@@ -99,7 +102,7 @@ public class SimpleGameKeys {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			sg.moveUp();
+			sk.moveUp(sg.getDelta());
 
 		}
 
@@ -111,7 +114,7 @@ public class SimpleGameKeys {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			sg.moveDown();
+			sk.moveDown(sg.getDelta());
 
 		}
 
@@ -123,7 +126,7 @@ public class SimpleGameKeys {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			sg.moveLeft();
+			sk.moveLeft(sg.getDelta());
 
 		}
 
@@ -135,7 +138,7 @@ public class SimpleGameKeys {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			sg.moveRight();
+			sk.moveRight(sg.getDelta());
 
 		}
 
@@ -147,7 +150,7 @@ public class SimpleGameKeys {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			sg.spaceBarPressed();
+			sk.spaceBarPressed(sg.getDelta());
 
 		}
 
@@ -159,7 +162,7 @@ public class SimpleGameKeys {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			sg.saveMenu();
+			sk.saveMenu();
 
 		}
 

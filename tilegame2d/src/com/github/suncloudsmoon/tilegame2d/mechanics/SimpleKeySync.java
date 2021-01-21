@@ -22,19 +22,17 @@
 
 package com.github.suncloudsmoon.tilegame2d.mechanics;
 
-import javax.swing.JFrame;
+public interface SimpleKeySync {
+	
+	public void moveUp(float delta);
 
-public class SimpleFrame extends JFrame {
+	public void moveDown(float delta);
 
-	private static final long serialVersionUID = -7582516732019823844L;
+	public void moveLeft(float delta);
 
-	private SimpleKeyConfig sk;
+	public void moveRight(float delta);
 
-	public SimpleFrame() {
-		super();
-	}
+	public void spaceBarPressed(float delta);
 
-	public SimpleFrame(String title) {
-		super(title);
-	}
+	public void saveMenu();
 }

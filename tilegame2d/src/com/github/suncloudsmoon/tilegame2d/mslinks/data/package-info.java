@@ -1,0 +1,1 @@
+package com.github.suncloudsmoon.tilegame2d.mslinks.data;

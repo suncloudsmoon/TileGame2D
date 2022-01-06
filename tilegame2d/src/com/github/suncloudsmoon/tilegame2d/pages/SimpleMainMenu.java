@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020 Ganesha Ajjampura
+* Copyright (c) 2020, suncloudsmoon
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ import javax.swing.JLabel;
  * like.
  * 
  * @version 0.5.0
- * @author Ganesha Ajjampura
+ * @author suncloudsmoon
  *
  */
 public interface SimpleMainMenu {

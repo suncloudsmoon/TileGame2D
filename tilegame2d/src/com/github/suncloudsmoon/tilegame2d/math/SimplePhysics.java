@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020 Ganesha Ajjampura
+* Copyright (c) 2020, suncloudsmoon
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -28,7 +28,7 @@ import java.util.ArrayList;
  * Gives you the coordinates for certain physics actions, like jumping and
  * random movements.
  * 
- * @author Ganesha Ajjampura
+ * @author suncloudsmoon
  * @version 0.5.3
  */
 public class SimplePhysics {

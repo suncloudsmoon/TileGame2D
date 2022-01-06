@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020 Ganesha Ajjampura
+* Copyright (c) 2020, suncloudsmoon
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -28,7 +28,7 @@ import java.awt.image.BufferedImage;
  * Specifies the recommended methods to be inherited for a main character in a
  * simple game.
  * 
- * @author Ganesha Ajjampura
+ * @author suncloudsmoon
  * @version 0.5.0
  */
 public interface SimpleMainCharacter {

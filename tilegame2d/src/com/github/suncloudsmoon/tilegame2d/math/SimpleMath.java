@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020 Ganesha Ajjampura
+* Copyright (c) 2020, suncloudsmoon
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@ import java.util.Random;
 /**
  * Simplifies the process of finding specfic data from a dataset.
  * 
- * @author Ganesha Ajjampura
+ * @author suncloudsmoon
  * @version 0.0.1
  */
 public class SimpleMath {
@@ -96,7 +96,7 @@ public class SimpleMath {
 	 * Throws a Runtime exception if no modes are found in a particular set of
 	 * numbers.
 	 * 
-	 * @author Ganesha Ajjampura
+	 * @author suncloudsmoon
 	 *
 	 */
 	public static class ModeNotFoundException extends RuntimeException {

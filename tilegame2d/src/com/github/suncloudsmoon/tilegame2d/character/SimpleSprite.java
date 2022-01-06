@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020 Ganesha Ajjampura
+* Copyright (c) 2020, suncloudsmoon
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ import javax.imageio.ImageIO;
 /**
  * Reads and stores sprite images all in one class.
  * 
- * @author Ganesha Ajjampura
+ * @author suncloudsmoon
  * @version 0.0.1
  */
 public class SimpleSprite {

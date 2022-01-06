@@ -1,6 +1,6 @@
 /*
 * Copyright (c) 2015 Dmitrii Shamrikov
-* Copyright (c) 2021 Ganesha Ajjampura
+* Copyright (c) 2021, suncloudsmoon
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal

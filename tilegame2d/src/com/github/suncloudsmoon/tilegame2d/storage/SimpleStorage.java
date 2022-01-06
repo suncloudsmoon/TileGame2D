@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2020-2021 Ganesha Ajjampura
+* Copyright (c) 2020-2021, suncloudsmoon
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -45,7 +45,7 @@ public StoreItems() {
 }
  * </pre>
  * 
- * @author Ganesha Ajjampura
+ * @author suncloudsmoon
  * @version 0.7.2
  */
 public class SimpleStorage {
@@ -251,7 +251,7 @@ public class SimpleStorage {
 	 * Throws an exception if a requested category is not found.
 	 * 
 	 * @deprecated Use the JSON Library instead of using categories.
-	 * @author Ganesha Ajjampura
+	 * @author suncloudsmoon
 	 *
 	 */
 	public static class CategoryNotFoundException extends RuntimeException {
